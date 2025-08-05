@@ -6,13 +6,22 @@ return {
   {
     'akinsho/toggleterm.nvim',
     version = '*',
-    opts = {
-      size = 100,
-      direction = 'float',
-      open_mapping = [[<M-i>]],
-      shade_terminals = true,
-      shell = [[powershell.exe -ExecutionPolicy Bypass -NoExit -Command "& 'C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat'"]],
-    },
+    opts = function()
+      local shell
+      if vim.fn.has 'win32' == 1 then
+        shell = [[powershell.exe -ExecutionPolicy Bypass -NoExit]]
+      elseif vim.fn.has 'macunix' == 1 then
+        shell = vim.o.shell -- change to whatever shell you have
+      else
+        shell = vim.o.shell
+      end
+      return {
+        size = 100,
+        direction = 'float',
+        open_mapping = [[<M-i>]],
+        shade_terminals = true,
+      }
+    end,
   },
   -- Neo Tree
   --
