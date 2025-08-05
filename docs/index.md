@@ -65,8 +65,14 @@ title: N00byVim
 
 <p class="subtitle">A simple preconfigured Neovim setup, based on Kickstart</p>
 
+## Linux/Mac
 <div class="install-box">
 curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/refs/heads/master/setup/setup.sh| bash
+</div>
+
+## Windows
+<div class="install-box">
+iwr -useb https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/windows-setup.ps1 | iex
 </div>
 
 
