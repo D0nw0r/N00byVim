@@ -63,11 +63,10 @@ title: N00byVim
 
 # N00byVim
 
-<p class="subtitle">A preconfigured Neovim setup for total beginners who want to look like pros 🧠</p>
+<p class="subtitle">A simple preconfigured Neovim setup, based on Kickstart</p>
 
 <div class="install-box">
-curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/main/setup/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/refs/heads/master/setup/setup.sh| bash
 </div>
 
-<p class="note">(Run this in your terminal)</p>
 
