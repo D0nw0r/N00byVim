@@ -6,6 +6,9 @@ I also recommend watching TJ's videos: https://www.youtube.com/@teej_dv/videos
 
 While based on it I did a few tweaks for my personal taste/organization.
 
+## Install
+Easy bash/powershell script installation on :https://d0nw0r.github.io/N00byVim/
+
 
 ## Folder structure
 
