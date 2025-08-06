@@ -126,15 +126,15 @@ iwr -useb https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/windows
 
 <div class="gallery">
   <div class="gallery-item">
-    <img src="/images/nvim1.png" alt="Neovim Preview 1" onclick="openOverlay(this.src)">
+    <img src="{{ site.baseurl }}/images/nvim1.png" alt="Neovim Preview 1" onclick="openOverlay(this.src)">
     <div class="label">Neovim UI screenshot</div>
   </div>
   <div class="gallery-item">
-    <img src="/images/nvim2.png" alt="Neovim Preview 2" onclick="openOverlay(this.src)">
+    <img src="{{ site.baseurl }}/images/nvim2.png" alt="Neovim Preview 2" onclick="openOverlay(this.src)">
     <div class="label">Integrated terminal</div>
   </div>
   <div class="gallery-item">
-    <img src="/images/nvim3.png" alt="Neovim Preview 3" onclick="openOverlay(this.src)">
+    <img src="{{ site.baseurl }}/images/nvim3.png" alt="Neovim Preview 3" onclick="openOverlay(this.src)">
     <div class="label">Lazygit integration</div>
   </div>
 </div>
