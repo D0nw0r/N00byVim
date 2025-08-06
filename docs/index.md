@@ -123,7 +123,29 @@ iwr -useb https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/windows
 <br>
 
 # Preview
+## Vague Theme
 
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="{{ site.baseurl }}/images/nvim4.png" alt="Neovim Preview 1" onclick="openOverlay(this.src)">
+    <div class="label">Neovim UI screenshot</div>
+  </div>
+  <div class="gallery-item">
+    <img src="{{ site.baseurl }}/images/nvim5.png" alt="Neovim Preview 2" onclick="openOverlay(this.src)">
+    <div class="label">Integrated terminal</div>
+  </div>
+  <div class="gallery-item">
+    <img src="{{ site.baseurl }}/images/nvim6.png" alt="Neovim Preview 3" onclick="openOverlay(this.src)">
+    <div class="label">Lazygit integration</div>
+  </div>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeOverlay()">
+  <img id="overlay-img" src="" alt="Zoomed image">
+</div>
+<br>
+
+## Tokyo Theme - Old theme - Commented on ``init.lua``
 <div class="gallery">
   <div class="gallery-item">
     <img src="{{ site.baseurl }}/images/nvim1.png" alt="Neovim Preview 1" onclick="openOverlay(this.src)">
