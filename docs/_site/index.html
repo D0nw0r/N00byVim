@@ -1,0 +1,72 @@
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    padding: 4em 1em;
+    background: #fdfdfd;
+    color: #111;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.3em;
+  }
+
+  p.subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2em;
+    color: #444;
+  }
+
+  .install-box {
+    background: #282c34;
+    color: #fff;
+    font-family: monospace;
+    padding: 1em;
+    border-radius: 8px;
+    display: inline-block;
+    max-width: 90%;
+    overflow-x: auto;
+    user-select: all;
+  }
+
+  .note {
+    font-size: 0.9rem;
+    margin-top: 1em;
+    color: #555;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #121212;
+      color: #ddd;
+    }
+
+    .subtitle {
+      color: #bbb;
+    }
+
+    .install-box {
+      background: #1e1e1e;
+    }
+
+    .note {
+      color: #888;
+    }
+  }
+</style>
+
+<h1 id="n00byvim">N00byVim</h1>
+
+<p class="subtitle">A simple preconfigured Neovim setup, based on Kickstart</p>
+
+<h2 id="linuxmac">Linux/Mac</h2>
+<div class="install-box">
+curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/refs/heads/master/setup/setup.sh| bash
+</div>
+
+<h2 id="windows">Windows</h2>
+<div class="install-box">
+iwr -useb https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/windows-setup.ps1 | iex
+</div>
+

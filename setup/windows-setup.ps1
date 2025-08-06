@@ -1,6 +1,5 @@
 ### `windows-setup.ps1`:
 
-```powershell
 Write-Host "[!] This will install N00byVim into your Neovim config directory."
 Write-Host "[!] Existing config will be backed up if it exists."
 
