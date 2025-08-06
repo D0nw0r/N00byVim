@@ -1,4 +1,63 @@
-<style>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>N00byVim | D0nw0r N00byVim</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="N00byVim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My n00b neovim config" />
+<meta property="og:description" content="My n00b neovim config" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="D0nw0r N00byVim" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="N00byVim" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"My n00b neovim config","headline":"N00byVim","name":"D0nw0r N00byVim","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=a8791a7869cf79b0b41eac7297289bb05c16a45b">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">D0nw0r N00byVim</a></h1>
+
+        
+
+        <p>My n00b neovim config</p>
+
+        
+        <p class="view"><a href="https://github.com/D0nw0r/N00byVim">View the Project on GitHub <small>D0nw0r/N00byVim</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <style>
   body {
     font-family: system-ui, sans-serif;
     text-align: center;
@@ -10,13 +69,18 @@
   h1 {
     font-size: 3rem;
     margin-bottom: 0.3em;
+    color: #fff;
   }
 
   p.subtitle {
     font-size: 1.25rem;
     margin-bottom: 2em;
-    color: #444;
+    color: #267cb9;
   }
+
+    h2 {
+    color: #ffffff;
+}
 
   .install-box {
     background: #282c34;
@@ -25,7 +89,6 @@
     padding: 1em;
     border-radius: 8px;
     display: inline-block;
-    max-width: 90%;
     overflow-x: auto;
     user-select: all;
   }
@@ -33,7 +96,7 @@
   .note {
     font-size: 0.9rem;
     margin-top: 1em;
-    color: #555;
+    color: #fff;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -43,7 +106,7 @@
     }
 
     .subtitle {
-      color: #bbb;
+      color: #fff;
     }
 
     .install-box {
@@ -51,8 +114,50 @@
     }
 
     .note {
-      color: #888;
+      color: #fff;
     }
+  .gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  .gallery img {
+    max-height: 220px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+  }
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  .label {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: #fff;
+    text-align: center;
+    font-family: system-ui, sans-serif;
+  }
+  .gallery-item {
+    text-align: center;
+    max-width: 220px;
+  }
+
+  .overlay {
+    position: fixed;
+    display: none;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
   }
 </style>
 
@@ -62,11 +167,59 @@
 
 <h2 id="linuxmac">Linux/Mac</h2>
 <div class="install-box">
-curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/refs/heads/master/setup/setup.sh| bash
+curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/setup.sh| bash
 </div>
-
+<p><br /></p>
 <h2 id="windows">Windows</h2>
 <div class="install-box">
 iwr -useb https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/windows-setup.ps1 | iex
 </div>
+<p><br /></p>
 
+<h1 id="preview">Preview</h1>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="/images/nvim1.png" alt="Neovim Preview 1" onclick="openOverlay(this.src)" />
+    <div class="label">Neovim UI screenshot</div>
+  </div>
+  <div class="gallery-item">
+    <img src="/images/nvim2.png" alt="Neovim Preview 2" onclick="openOverlay(this.src)" />
+    <div class="label">Integrated terminal</div>
+  </div>
+  <div class="gallery-item">
+    <img src="/images/nvim3.png" alt="Neovim Preview 3" onclick="openOverlay(this.src)" />
+    <div class="label">Lazygit integration</div>
+  </div>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeOverlay()">
+  <img id="overlay-img" src="" alt="Zoomed image" />
+</div>
+
+<script>
+  function openOverlay(src) {
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+    overlayImg.src = src;
+    overlay.style.display = 'flex';
+  }
+  function closeOverlay() {
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+  }
+</script>
+
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/D0nw0r">D0nw0r</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
