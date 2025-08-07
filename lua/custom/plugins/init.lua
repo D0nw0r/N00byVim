@@ -9,7 +9,7 @@ return {
     opts = function()
       local shell
       if vim.fn.has 'win32' == 1 then
-        shell = [[powershell.exe -ExecutionPolicy Bypass -NoExit]]
+        shell = [[powershell.exe -ExecutionPolicy Bypass ]]
       elseif vim.fn.has 'macunix' == 1 then
         shell = vim.o.shell -- change to whatever shell you have
       else
@@ -20,6 +20,7 @@ return {
         direction = 'float',
         open_mapping = [[<M-i>]],
         shade_terminals = true,
+        shell = shell,
       }
     end,
   },
