@@ -7,6 +7,7 @@ local servers_list = {
   gopls = {},
   clangd = {},
   pyright = {},
+  ['html-lsp'] = {},
 }
 
 return servers_list
