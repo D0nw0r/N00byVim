@@ -749,17 +749,21 @@ require('lazy').setup({
       --
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
 
       -- IMPORT CUSTOM SERVERS
       local custom_servers = require 'custom.ensure-installed.servers'
-      vim.tbl_extend('force', servers, custom_servers)
-      -- IMPORT CUSTOM FORMATTERS AS WELL
+      servers = vim.tbl_extend('force', servers, custom_servers) -- reassign servers with merged table
+
+      -- build ensure_installed after merging servers
+      local ensure_installed = vim.tbl_keys(servers or {})
+
+      -- IMPORT CUSTOM FORMATTERS
       local custom_formatters = require 'custom.ensure-installed.formatters'
       vim.list_extend(ensure_installed, custom_formatters)
+
+      vim.list_extend(ensure_installed, {
+        'stylua', -- Used to format Lua code
+      })
 
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
