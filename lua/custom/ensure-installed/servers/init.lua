@@ -6,6 +6,7 @@
 local servers_list = {
   gopls = {},
   clangd = {},
+  pyright = {},
 }
 
 return servers_list

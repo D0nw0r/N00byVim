@@ -1,7 +1,9 @@
 local M = {}
 M.custom_formatters = {
-  cpp = { 'clangd-format' },
+  cpp = { 'clang-format' },
+  c = { 'clang-format' },
   go = { 'goimports' },
+  python = { 'black' },
 }
 
 return M
