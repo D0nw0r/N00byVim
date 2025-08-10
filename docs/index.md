@@ -113,7 +113,7 @@ title: N00byVim
 
 ## Linux/Mac
 <div class="install-box">
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/setup.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/D0nw0r/N00byVim/master/setup/setup.sh)"
 </div>
 <br>
 ## Windows
