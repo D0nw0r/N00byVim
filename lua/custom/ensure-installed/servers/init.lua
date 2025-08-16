@@ -8,6 +8,7 @@ local servers_list = {
   clangd = {},
   pyright = {},
   ['html-lsp'] = {},
+  vtsls = {},
 }
 
 return servers_list

@@ -4,6 +4,9 @@ M.custom_formatters = {
   c = { 'clang-format' },
   go = { 'goimports' },
   python = { 'black' },
+  javascript = { 'prettierd' },
+  typescriptreact = { 'prettierd' },
+  javascriptreact = { 'prettierd' },
 }
 
 return M
