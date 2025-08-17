@@ -1,4 +1,4 @@
---[[
+--[[init
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
@@ -162,6 +162,8 @@ end
 
 -- Enable break indent
 vim.o.breakindent = true
+
+vim.opt.termguicolors = true
 
 -- Save undo history
 vim.o.undofile = true
