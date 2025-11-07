@@ -9,6 +9,7 @@ local servers_list = {
   pyright = {},
   ['html-lsp'] = {},
   vtsls = {},
+  ['rust-analyzer'] = {},
 }
 
 return servers_list

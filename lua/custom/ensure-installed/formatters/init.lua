@@ -5,7 +5,6 @@
 
 local formatters_list = {
   'clang-format', -- C++ formatter
-  'black', -- python formatter
   'eslint_d',
   'prettierd',
 }
