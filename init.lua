@@ -254,8 +254,17 @@ require 'custom.keymaps'
 -- [[ Custom Options import ]]
 require 'custom.opts'
 
+-- [[ IMPORT CUSTOM SERVERS ]]
+local custom_servers = require 'custom.ensure-installed.servers'
+
+-- [[ IMPORT CUSTOM FORMATTERS ]]
+local custom_formatters = require 'custom.ensure-installed.formatters'
+
 -- [[ Custom Formatters for conform import]]
 local custom_conform_formatters = require('custom.configs.conform-formatters').custom_formatters
+
+-- [[ IMPORT CUSTOM DAP ]]
+local debuggers = require 'custom.ensure-installed.debuggers'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -766,15 +775,12 @@ require('lazy').setup({
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
 
-      -- IMPORT CUSTOM SERVERS
-      local custom_servers = require 'custom.ensure-installed.servers'
       servers = vim.tbl_extend('force', servers, custom_servers) -- reassign servers with merged table
 
       -- build ensure_installed after merging servers
       local ensure_installed = vim.tbl_keys(servers or {})
 
-      -- IMPORT CUSTOM FORMATTERS
-      local custom_formatters = require 'custom.ensure-installed.formatters'
+      -- build ensure_installed with custom formatters too
       vim.list_extend(ensure_installed, custom_formatters)
 
       vim.list_extend(ensure_installed, {
@@ -798,6 +804,18 @@ require('lazy').setup({
         },
       }
     end,
+  },
+
+  {
+    'jay-babu/mason-nvim-dap.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'mfussenegger/nvim-dap',
+    },
+    opts = {
+      ensure_installed = debuggers,
+      automatic_installation = true,
+    },
   },
 
   { -- Autoformat
@@ -1020,6 +1038,7 @@ require('lazy').setup({
         'markdown_inline',
         'query',
         'vim',
+        'rust',
         'vimdoc',
         'cpp',
         'go',
