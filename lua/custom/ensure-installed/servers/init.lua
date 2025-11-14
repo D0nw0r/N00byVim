@@ -9,7 +9,16 @@ local servers_list = {
   pyright = {},
   ['html-lsp'] = {},
   vtsls = {},
-  rust_analyzer = {},
+  rust_analyzer = {
+    cargo = {
+      buildScripts = {
+        enable = true,
+      },
+    },
+    procMacro = {
+      enable = true,
+    },
+  },
 }
 
 return servers_list
