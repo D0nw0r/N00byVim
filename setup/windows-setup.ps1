@@ -3,6 +3,10 @@
 Write-Host "[!] This will install N00byVim into your Neovim config directory."
 Write-Host "[!] Existing config will be backed up if it exists."
 
+Write-Host "[+] Installing pre-requisites for snacks nvim"
+winget install sharkdp.fd
+winget install lazygit
+
 $reply = Read-Host "Proceed? (y/n)"
 
 if ($reply -ne 'y' -and $reply -ne 'Y') {
