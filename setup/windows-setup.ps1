@@ -6,6 +6,7 @@ Write-Host "[!] Existing config will be backed up if it exists."
 Write-Host "[+] Installing pre-requisites for snacks nvim"
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 choco install mingw
+winget install BurntSushi.ripgrep.MSVC
 winget install sharkdp.fd
 winget install lazygit
 
