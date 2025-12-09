@@ -768,4 +768,18 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
     opts = {},
   },
+  { 'nvim-tree/nvim-web-devicons', opts = {} },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup {
+        options = {
+          theme = 'auto', -- Will match your vague colorscheme
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+        },
+      }
+    end,
+  },
 }

@@ -6,6 +6,7 @@ M.custom_formatters = {
   javascript = { 'prettierd' },
   typescriptreact = { 'prettierd' },
   javascriptreact = { 'prettierd' },
+  svelte = { 'prettier', 'prettierd' },
 }
 
 return M
