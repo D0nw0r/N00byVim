@@ -19,6 +19,7 @@ local servers_list = {
       enable = true,
     },
   },
+  ['svelte-language-server'] = {},
 }
 
 return servers_list
