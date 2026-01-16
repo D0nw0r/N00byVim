@@ -11,17 +11,36 @@ return {
       if vim.fn.has 'win32' == 1 then
         shell = [[powershell.exe -ExecutionPolicy Bypass ]]
       elseif vim.fn.has 'macunix' == 1 then
-        shell = vim.o.shell -- change to whatever shell you have
+        shell = vim.o.shell
       else
         shell = vim.o.shell
       end
       return {
-        size = 100,
-        direction = 'float',
-        open_mapping = [[<M-i>]],
+        size = function(term)
+          if term.direction == 'horizontal' then
+            return 15
+          elseif term.direction == 'vertical' then
+            return vim.o.columns * 0.4 -- 40% of screen width
+          end
+        end,
+        direction = 'float', -- Default direction
+        open_mapping = [[<M-i>]], -- Float toggle
         shade_terminals = true,
         shell = shell,
       }
+    end,
+    config = function(_, opts)
+      require('toggleterm').setup(opts)
+
+      -- Additional keymaps for different directions
+      vim.keymap.set('n', '<M-v>', '<cmd>ToggleTerm direction=vertical<cr>', { desc = 'Toggle vertical terminal' })
+      vim.keymap.set('n', '<M-h>', '<cmd>ToggleTerm direction=horizontal<cr>', { desc = 'Toggle horizontal terminal' })
+      vim.keymap.set('n', '<M-i>', '<cmd>ToggleTerm direction=float<cr>', { desc = 'Toggle floating terminal' })
+
+      -- Terminal mode mappings (same keys work inside terminal)
+      vim.keymap.set('t', '<M-v>', '<cmd>ToggleTerm direction=vertical<cr>')
+      vim.keymap.set('t', '<M-h>', '<cmd>ToggleTerm direction=horizontal<cr>')
+      vim.keymap.set('t', '<M-i>', '<cmd>ToggleTerm direction=float<cr>')
     end,
   },
   {
