@@ -1,12 +1,12 @@
 vim.opt.shiftwidth = 4
 
 -- Folding configuration with Treesitter
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.opt.foldlevel = 99 -- Start with all folds open
-vim.opt.foldlevelstart = 99 -- Open all folds when opening file
-vim.opt.foldenable = true
-vim.opt.foldcolumn = '1' -- Show fold column (optional, adds visual indicator)
+-- Enable folding
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.o.foldenable = false -- Don't fold by default when opening files
+vim.o.foldlevel = 99 -- Open all folds by default
+vim.o.foldlevelstart = 99 -- Open all folds when opening file
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'go',
