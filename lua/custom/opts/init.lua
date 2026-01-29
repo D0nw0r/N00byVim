@@ -7,3 +7,10 @@ vim.opt.foldlevel = 99 -- Start with all folds open
 vim.opt.foldlevelstart = 99 -- Open all folds when opening file
 vim.opt.foldenable = true
 vim.opt.foldcolumn = '1' -- Show fold column (optional, adds visual indicator)
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
+  callback = function()
+    vim.cmd 'TSBufEnable highlight'
+  end,
+})
