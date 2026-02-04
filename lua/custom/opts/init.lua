@@ -14,3 +14,6 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.cmd 'TSBufEnable highlight'
   end,
 })
+
+-- just lsp
+vim.lsp.enable 'just'

@@ -8,6 +8,7 @@ local servers_list = {
   clangd = {},
   pyright = {},
   ['html-lsp'] = {},
+  ['just-lsp'] = {},
   vtsls = {},
   rust_analyzer = {
     cargo = {
