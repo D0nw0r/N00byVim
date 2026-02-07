@@ -8,12 +8,5 @@ vim.o.foldenable = false -- Don't fold by default when opening files
 vim.o.foldlevel = 99 -- Open all folds by default
 vim.o.foldlevelstart = 99 -- Open all folds when opening file
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'go',
-  callback = function()
-    vim.cmd 'TSBufEnable highlight'
-  end,
-})
-
 -- just lsp
 vim.lsp.enable 'just'
