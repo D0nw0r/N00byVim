@@ -76,6 +76,7 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
+  -- NOTE: Themes to install in list here, themery then shows them
   {
     'vague2k/vague.nvim',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -87,6 +88,29 @@ return {
       }
       vim.cmd 'colorscheme vague'
     end,
+  },
+  { 'rebelot/kanagawa.nvim', lazy = true },
+  { 'vague2k/vague.nvim', lazy = true },
+  {
+    'zaldih/themery.nvim',
+    lazy = false,
+    dependencies = { 'folke/tokyonight.nvim', 'rebelot/kanagawa.nvim', 'vague2k/vague.nvim' },
+    config = function()
+      require('themery').setup {
+        themes = {
+          'tokyonight-night',
+          'tokyonight-storm',
+          'kanagawa-wave',
+          'kanagawa-dragon',
+          'vague',
+        },
+        livePreview = true, -- Apply theme while picking (awesome feature)
+      }
+    end,
+    -- Add a keymap to open the theme picker
+    keys = {
+      { '<leader>th', '<cmd>Themery<cr>', desc = 'Theme Switcher' },
+    },
   },
   {
     'abecodes/tabout.nvim',
@@ -233,7 +257,7 @@ return {
         timeout = 3000,
       },
       picker = { enabled = true },
-      quickfile = { enabled = true },
+      quickfile = { enabled = false },
       scope = { enabled = true },
       scroll = { enabled = false },
       statuscolumn = { enabled = true },
