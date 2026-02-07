@@ -1056,6 +1056,7 @@ require('lazy').setup({
           'toml',
           'json',
           'yaml',
+          'just',
         },
         auto_install = true,
         highlight = {
