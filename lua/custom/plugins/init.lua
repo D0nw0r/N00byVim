@@ -91,6 +91,7 @@ return {
   },
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'vague2k/vague.nvim', lazy = true },
+  { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
   {
     'zaldih/themery.nvim',
     lazy = false,
@@ -103,6 +104,10 @@ return {
           'kanagawa-wave',
           'kanagawa-dragon',
           'vague',
+          'catppuccin-latte',
+          'catppuccin-frappe',
+          'catppuccin-macchiato',
+          'catppuccin-mocha',
         },
         livePreview = true, -- Apply theme while picking (awesome feature)
       }
