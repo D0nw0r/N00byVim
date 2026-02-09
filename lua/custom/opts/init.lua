@@ -9,7 +9,7 @@ vim.o.foldlevel = 99 -- Open all folds by default
 vim.o.foldlevelstart = 99 -- Open all folds when opening file
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'go' },
+  pattern = { 'go', 'svelte' },
   callback = function()
     vim.treesitter.start()
   end,
