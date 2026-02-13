@@ -89,6 +89,16 @@ return {
       vim.cmd 'colorscheme vague'
     end,
   },
+  {
+    'oxfist/night-owl.nvim',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      require('night-owl').setup()
+      vim.cmd.colorscheme 'night-owl'
+    end,
+  },
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'vague2k/vague.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
@@ -108,6 +118,7 @@ return {
           'catppuccin-frappe',
           'catppuccin-macchiato',
           'catppuccin-mocha',
+          'night-owl',
         },
         livePreview = true, -- Apply theme while picking (awesome feature)
       }
