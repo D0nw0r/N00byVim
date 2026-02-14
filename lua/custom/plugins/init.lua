@@ -102,28 +102,71 @@ return {
   { 'rebelot/kanagawa.nvim', lazy = true },
   { 'vague2k/vague.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
+  { 'rebelot/kanagawa.nvim', lazy = true },
+  { 'vague2k/vague.nvim', lazy = true },
+  { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
+  { 'folke/tokyonight.nvim', lazy = true },
+  { 'oxfist/night-owl.nvim', lazy = true },
+  { 'Mofiqul/vscode.nvim', lazy = true }, -- VSCode Dark
+  { 'navarasu/onedark.nvim', lazy = true }, -- OneDark
+  { 'ellisonleao/gruvbox.nvim', lazy = true }, -- Gruvbox
+  { 'sainnhe/everforest', lazy = true }, -- Everforest
+  { 'shaunsingh/nord.nvim', lazy = true }, -- Nord
+  { 'rose-pine/neovim', name = 'rose-pine', lazy = true }, -- Rosepine
+  { 'EdenEast/nightfox.nvim', lazy = true }, -- Nightfox
+  { 'Shatur/neovim-ayu', lazy = true }, -- Ayu
   {
     'zaldih/themery.nvim',
     lazy = false,
-    dependencies = { 'folke/tokyonight.nvim', 'rebelot/kanagawa.nvim', 'vague2k/vague.nvim' },
+    dependencies = {
+      'folke/tokyonight.nvim',
+      'rebelot/kanagawa.nvim',
+      'vague2k/vague.nvim',
+      'catppuccin/nvim',
+      'navarasu/onedark.nvim',
+      'ellisonleao/gruvbox.nvim',
+      'rose-pine/neovim',
+    },
     config = function()
       require('themery').setup {
         themes = {
+          -- Tokyo Night variants
           'tokyonight-night',
           'tokyonight-storm',
+          'tokyonight-moon',
+          'tokyonight-day',
+
+          -- Kanagawa variants
           'kanagawa-wave',
           'kanagawa-dragon',
-          'vague',
+          'kanagawa-lotus',
+
+          -- Catppuccin variants
           'catppuccin-latte',
           'catppuccin-frappe',
           'catppuccin-macchiato',
           'catppuccin-mocha',
+
+          -- Others
+          'vague',
           'night-owl',
+          'onedark',
+          'gruvbox',
+          'everforest',
+          'nord',
+          'rose-pine',
+          'rose-pine-moon',
+          'rose-pine-dawn',
+          'nightfox',
+          'carbonfox',
+          'duskfox',
+          'ayu-dark',
+          'ayu-light',
+          'ayu-mirage',
         },
-        livePreview = true, -- Apply theme while picking (awesome feature)
+        livePreview = true,
       }
     end,
-    -- Add a keymap to open the theme picker
     keys = {
       { '<leader>th', '<cmd>Themery<cr>', desc = 'Theme Switcher' },
     },
