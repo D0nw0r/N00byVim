@@ -89,24 +89,10 @@ return {
       vim.cmd 'colorscheme vague'
     end,
   },
-  {
-    'oxfist/night-owl.nvim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      -- load the colorscheme here
-      require('night-owl').setup()
-      vim.cmd.colorscheme 'night-owl'
-    end,
-  },
+  { 'oxfist/night-owl.nvim', lazy = true },
   { 'rebelot/kanagawa.nvim', lazy = true },
-  { 'vague2k/vague.nvim', lazy = true },
-  { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
-  { 'rebelot/kanagawa.nvim', lazy = true },
-  { 'vague2k/vague.nvim', lazy = true },
   { 'catppuccin/nvim', name = 'catppuccin', lazy = true },
   { 'folke/tokyonight.nvim', lazy = true },
-  { 'oxfist/night-owl.nvim', lazy = true },
   { 'Mofiqul/vscode.nvim', lazy = true }, -- VSCode Dark
   { 'navarasu/onedark.nvim', lazy = true }, -- OneDark
   { 'ellisonleao/gruvbox.nvim', lazy = true }, -- Gruvbox
@@ -884,6 +870,55 @@ return {
       }
     end,
   },
+  {
+    'stevearc/overseer.nvim',
+    cmd = { 'OverseerRun', 'OverseerToggle' },
+    dependencies = { 'akinsho/toggleterm.nvim' },
+    ---@module 'overseer'
+    ---@type overseer.SetupOpts
+    opts = {
+      strategy = {
+        'toggleterm',
+        direction = 'horizontal',
+        open_on_start = true,
+        auto_scroll = true,
+        quit_on_exit = 'never',
+      },
+      task_list = {
+        bindings = {
+          ['<CR>'] = 'OpenOutput',
+        },
+      },
+    },
+    keys = {
+      { '<F6>', ':OverseerToggle<CR>', desc = 'Toggle Overseer' },
+    },
+  },
+  {
+    'coder/claudecode.nvim',
+    dependencies = { 'folke/snacks.nvim' },
+    config = true,
+    keys = {
+      { '<leader>a', nil, desc = 'AI/Claude Code' },
+      { '<leader>ac', '<cmd>ClaudeCode<cr>', desc = 'Toggle Claude' },
+      { '<leader>af', '<cmd>ClaudeCodeFocus<cr>', desc = 'Focus Claude' },
+      { '<leader>ar', '<cmd>ClaudeCode --resume<cr>', desc = 'Resume Claude' },
+      { '<leader>aC', '<cmd>ClaudeCode --continue<cr>', desc = 'Continue Claude' },
+      { '<leader>am', '<cmd>ClaudeCodeSelectModel<cr>', desc = 'Select Claude model' },
+      { '<leader>ab', '<cmd>ClaudeCodeAdd %<cr>', desc = 'Add current buffer' },
+      { '<leader>as', '<cmd>ClaudeCodeSend<cr>', mode = 'v', desc = 'Send to Claude' },
+      {
+        '<leader>as',
+        '<cmd>ClaudeCodeTreeAdd<cr>',
+        desc = 'Add file',
+        ft = { 'NvimTree', 'neo-tree', 'oil', 'minifiles', 'netrw' },
+      },
+      -- Diff management
+      { '<leader>aa', '<cmd>ClaudeCodeDiffAccept<cr>', desc = 'Accept diff' },
+      { '<leader>ad', '<cmd>ClaudeCodeDiffDeny<cr>', desc = 'Deny diff' },
+    },
+  },
+
   -- Cool plugin but still doesnt support windows, TODO, maybe in the future
   -- {
   --   'amitds1997/remote-nvim.nvim',
